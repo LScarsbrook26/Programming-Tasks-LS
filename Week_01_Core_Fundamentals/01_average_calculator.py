@@ -14,10 +14,23 @@ TODO:
 - Add demonstration code under `if __name__ == "__main__":`
 """
 
-def main():
-    pass
+def calculate_average():
+   numbers = []
+   add = True
+   while add == True:
+       entry = int(input("Enter a number: "))
+       fin = input("enter done if finished, else put anything")
+       numbers.append(int(entry))
+       if fin == "done":
+           add = False
+       else:
+           add = True
+   total = 0
+   for i in range(len(numbers)):
+       total = total + int(numbers[i])
 
+   average = total / len(numbers)
+   return average
 
-
-if __name__ == "__main__":
-    main()
+calculator = calculate_average()
+print("Your average is:", calculator)
