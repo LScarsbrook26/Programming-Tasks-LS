@@ -12,12 +12,34 @@ TODO:
 - Add demonstration code under `if __name__ == "__main__":`
 """
 
-def main():
-    # TODO: Write demonstration/testing code
-    # If you want to delete all the code here and work just with a blank file go ahead, remember anything under the if __name__=="__main__":
-    # will only run if this module is being run directly. So used this subprocedure to carry out testing if it is going to be an imported file.
-    pass
+while True:
+    print("Temperature Converter")
+    print("1. Celsius to Fahrenheit")
+    print("2. Fahrenheit to Celsius")
+    print("3. Exit")
 
+    choice = input("Choose an option 1, 2 or 3: ")
 
-if __name__ == "__main__":
-    main()
+    if choice == "1":
+        temperature = input("Enter temperature in Celsius: ")
+        if temperature == "":
+            print("Invalid input.")
+        else:
+            temperature = float(temperature)
+            fahrenheit = (temperature * 9 / 5) + 32
+            print("Temperature in Fahrenheit:", fahrenheit)
+    elif choice == "2":
+        temperature = input("Enter temperature in Fahrenheit: ")
+
+        if temperature == "":
+            print("Invalid input.")
+        else:
+            temperature = float(temperature)
+            celsius = (temperature - 32) * 5 / 9
+            print("Temperature in Celsius:", celsius)
+
+    elif choice == "3":
+        print("exit ")
+        break
+    else:
+        print("Invalid choice. Please choose 1, 2 or 3.")
