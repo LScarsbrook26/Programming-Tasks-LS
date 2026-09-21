@@ -14,12 +14,19 @@ TODO:
 - Add demonstration code under `if __name__ == "__main__":`
 """
 
-def main():
-    # TODO: Write demonstration/testing code
-    # If you want to delete all the code here and work just with a blank file go ahead, remember anything under the if __name__=="__main__":
-    # will only run if this module is being run directly. So used this subprocedure to carry out testing if it is going to be an imported file.
-    pass
+def get_grade(score):
+    total = "A"
+    if score >= 80 and score <= 100:
+        total = "A"
+    elif score >= 60 and score <= 79:
+        total = "B"
+    elif score >= 40 and score <= 59:
+        total = "c"
+    else:
+        total = "D"
+    return total
 
+score = int(input("enter percentage: "))
+cal = get_grade(score)
+print(cal)
 
-if __name__ == "__main__":
-    main()
