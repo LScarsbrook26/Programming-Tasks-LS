@@ -12,12 +12,19 @@ TODO:
 - Add demonstration code under `if __name__ == "__main__":`
 """
 
-def main():
-    # TODO: Write demonstration/testing code
-    # If you want to delete all the code here and work just with a blank file go ahead, remember anything under the if __name__=="__main__":
-    # will only run if this module is being run directly. So used this subprocedure to carry out testing if it is going to be an imported file.
-    pass
+def login(username, password):
+    for i in range(3):
+        user = input("Enter username: ")
+        pass1 = input("Enter password: ")
+        if user == username and pass1 == password:
+            print("Welcome!")
+            break
+        else:
+            print("Access denied:", 2 - i, "attempts remaining")
+    else:
+        print("Too many failed attempts.")
 
+username = "LScarsbrook"
+password = "M1lkshake!"
+signin = login(username, password)
 
-if __name__ == "__main__":
-    main()
