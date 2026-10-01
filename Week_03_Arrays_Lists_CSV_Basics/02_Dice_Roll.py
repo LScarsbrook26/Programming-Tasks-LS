@@ -15,12 +15,53 @@ TODO:
 - Add demonstration code under `if __name__ == "__main__":`
 """
 
-def main():
-    # TODO: Write demonstration/testing code
-    # If you want to delete all the code here and work just with a blank file go ahead, remember anything under the if __name__=="__main__":
-    # will only run if this module is being run directly. So used this subprocedure to carry out testing if it is going to be an imported file.
-    pass
+import random 
+
+def dice(rolls):
+    dice = [0,0,0,0,0,0]
+    result = []
+    total = 0
+    for i in range(rolls):
+        num = random.randint(1,6)
+        result.append(num)
+        total = total + num
+        print("roll", i + 1 , "is: ", num)
+        if num == 1:
+            dice[0] = dice[0] + 1
+            print(dice)
+        elif num == 2:
+            dice[1] = dice[1] + 1
+            print(dice)
+        elif num == 3:
+            dice[2] = dice[2] + 1
+            print(dice)
+        elif num == 4:
+            dice[3] = dice[3] + 1
+            print(dice)
+        elif num == 5:
+            dice[4] = dice[4] + 1
+            print(dice)
+        else:
+            dice[5] = dice[5] + 1
+            print(dice)
+    return dice, total
+
+rolls = int(input("enter how many times to roll the dice: "))
+cal, total = dice(rolls)
+average = total / rolls 
+print("which option would you like?")
+print("1 - totals for each side")
+print("2 - average dice roll")
+print("3 - counts for each of the 6 sides")
+choice = int(input("enter your choice"))
+if choice == 1:
+    print(cal)
+elif choice == 2:
+    print("average:", int(average))
+else:
+    print(cal[0], "ones", cal[1], "twos", cal[2], "threes", cal[3], "fours", cal[4], "fives", cal[5], "sixes")
 
 
-if __name__ == "__main__":
-    main()
+    
+    
+
