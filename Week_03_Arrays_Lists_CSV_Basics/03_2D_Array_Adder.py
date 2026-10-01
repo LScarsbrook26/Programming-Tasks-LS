@@ -12,12 +12,36 @@ TODO:
 - Add demonstration code under `if __name__ == "__main__":`
 """
 
-def main():
-    # TODO: Write demonstration/testing code
-    # If you want to delete all the code here and work just with a blank file go ahead, remember anything under the if __name__=="__main__":
-    # will only run if this module is being run directly. So used this subprocedure to carry out testing if it is going to be an imported file.
-    pass
+array = [
+    [2, 6, 5],
+    [4, 9, 8]
+]
 
 
-if __name__ == "__main__":
-    main()
+def add():
+    row = int(input("Which row? "))
+    value = int(input("Enter value: "))
+    array[row].append(value)
+
+
+def read():
+    for i in array:
+        print(i)
+
+
+def delete():
+    row = int(input("Which row? "))
+    position = int(input("Which position? "))
+    array[row].pop(position)
+
+
+print("1 - add")
+print("2 - read")
+print("3 - delete")
+choice = input("choose: ")
+if choice == "1":
+    add()
+elif choice == "2":
+    read()
+else:
+    delete()
