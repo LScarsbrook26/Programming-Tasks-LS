@@ -16,12 +16,45 @@ TODO:
 - Add demonstration code under `if __name__ == "__main__":`
 """
 
-def main():
-    # TODO: Write demonstration/testing code
-    # If you want to delete all the code here and work just with a blank file go ahead, remember anything under the if __name__=="__main__":
-    # will only run if this module is being run directly. So used this subprocedure to carry out testing if it is going to be an imported file.
-    pass
+file = open("meantemp.txt", "r")
+lines = file.readlines()
+file.close()
+hval = -40.0
+hdate = ""
+lval = 40.0
+ldate = ""
+for i in range(2,len(lines)):
+    rn = lines[i]
+    if rn.strip() != "":
+        parts = rn.split()
+        date = parts[0]
+        value = float(parts[1])
+        if value > hval:
+            hval = value
+            hdate = date
+
+for i in range(2,len(lines)):
+    rn = lines[i]
+    if rn.strip() != "":
+        parts = rn.split()
+        date = parts[0]
+        value = float(parts[1])
+        if value < lval:
+            lval = value
+            ldate = date
+total = 0
+count = 0
+for i in range(2,len(lines)):
+    rn = lines[i]
+    if rn.strip() != "":
+        parts = rn.split()
+        value = float(parts[1])
+        total = total + value
+        count = count + 1
+
+average = total / count
+print("highest temp: ", hval, " on", hdate)
+print("lowest temp: ", lval, "on", ldate)
+print("average temp: ", int(average))
 
 
-if __name__ == "__main__":
-    main()
