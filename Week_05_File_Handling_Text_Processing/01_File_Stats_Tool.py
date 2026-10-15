@@ -13,12 +13,28 @@ TODO:
 - Add demonstration code under `if __name__ == "__main__":`
 """
 
-def main():
-    # TODO: Write demonstration/testing code
-    # If you want to delete all the code here and work just with a blank file go ahead, remember anything under the if __name__=="__main__":
-    # will only run if this module is being run directly. So used this subprocedure to carry out testing if it is going to be an imported file.
-    pass
+def lines(text):
+    lines = text.split("\n")
+    return len(lines)
+
+def countwords(text):
+    words = text.split()
+    return len(words)
+
+def countcharacters(text):
+    return len(text)
+
+def freword(text):
+    words = text.split()
+   
 
 
-if __name__ == "__main__":
-    main()
+
+file = open("text.txt", "r")
+text = file.read()
+file.close()
+print("Number of lines:", lines(text))
+print("Number of words:", countwords(text))
+print("Number of characters:", countcharacters(text))
+print("Most frequent word:", freword(text))
+
