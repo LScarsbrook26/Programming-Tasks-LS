@@ -24,10 +24,14 @@ def add():
         "price" : price,
         "amount" : amount
     }
+    with open("Week_06_Multi-Dimensional_Structures_Dictionaries_Menus/File.json", "a") as file:
+    data = json.dump(add, file)
+    total = add["price"] + add["amount"]
+    print(total)
 
+def printF():
+    with open("Week_06_Multi-Dimensional_Structures_Dictionaries_Menus/File.json, "r") as file:
+        contents = json.load(file)
+        print(contents)
 add()
-
-with open(, "a") as file:
-    current_data = json.load(file)
-total = add["price"] + add["amount"]
-print(total)
+printF()
