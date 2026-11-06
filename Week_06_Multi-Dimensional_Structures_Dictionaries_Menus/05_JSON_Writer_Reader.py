@@ -14,12 +14,20 @@ TODO:
 - Add demonstration code under `if __name__ == "__main__":`
 """
 
-def main():
-    # TODO: Write demonstration/testing code
-    # If you want to delete all the code here and work just with a blank file go ahead, remember anything under the if __name__=="__main__":
-    # will only run if this module is being run directly. So used this subprocedure to carry out testing if it is going to be an imported file.
-    pass
+def add():
+    name = input("enter name")
+    price = float(input("enter price"))
+    amount = int("how many "))
 
+    add = {
+        "name" : name,
+        "price" : price,
+        "amount" : amount
+    }
 
-if __name__ == "__main__":
-    main()
+add()
+
+with open(, "a") as file:
+    current_data = json.load(file)
+total = add["price"] + add["amount"]
+print(total)
