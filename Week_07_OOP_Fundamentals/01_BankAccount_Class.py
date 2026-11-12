@@ -26,3 +26,46 @@ def main():
 
 if __name__ == "__main__":
     main()
+class people:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.balance = balance
+    
+    def deposit(self, amount):
+        self.balance += amount
+        print("your balance is now:", self.balance)
+        return self.balance
+    
+    def withdraw(self, amount):
+        if amount > self.balance:
+            ("not enough")
+        else:
+            ("valid")
+            self.balance -= amount
+            print("your balance is now:", self.balance)
+        return self.balance
+    
+    def getBalance(self):
+        print(self.balance)
+    
+    def getLog():
+        
+
+name = input("enter name")
+account = int(input("enter balance"))
+p1 = people(name, account)
+while true:
+    print(" 1. deposit, 2. withdraw, 3. getBalance, 4. getLog")
+    num = int(input())
+    if num == 1:
+        amount = int(input("enter how much to add"))
+        p1.deposit(amount)
+    elif num == 2:
+        amount = int(input("enter how much to take out"))
+        p1.withdraw(amount)
+    elif num == 3:
+        p1.getBalance
+    elif num == 4:
+        p1.getLog
+    else:
+        ("not valid")
