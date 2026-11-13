@@ -14,12 +14,42 @@ TODO:
 - Add demonstration code under `if __name__ == "__main__":`
 """
 
-def main():
-    # TODO: Write demonstration/testing code
-    # If you want to delete all the code here and work just with a blank file go ahead, remember anything under the if __name__=="__main__":
-    # will only run if this module is being run directly. So used this subprocedure to carry out testing if it is going to be an imported file.
-    pass
+class Item:
+    def __init__(self, title, year):
+        self.title = title
+        self.year = year
+
+    def display(self):
+        print("Title:", self.title)
+        print("Year:", self.year)
 
 
-if __name__ == "__main__":
-    main()
+class Book(Item):
+    def __init__(self, title, year, author):
+        Item.__init__(self, title, year)
+        self.author = author
+
+    def display(self):
+        print("Book:", self.title)
+        print("Year:", self.year)
+        print("Author:", self.author)
+
+
+class DVD(Item):
+    def __init__(self, title, year, director):
+        Item.__init__(self, title, year)
+        self.director = director
+
+    def display(self):
+        print("DVD:", self.title)
+        print("Year:", self.year)
+        print("Director:", self.director)
+
+
+item1 = Book("Harry Potter", 1997, "J.K. Rowling")
+item2 = DVD("frozen", 2013, "chris buck ")
+item = [item1, item2]
+
+for i in item:
+    item.display()
+    print()
