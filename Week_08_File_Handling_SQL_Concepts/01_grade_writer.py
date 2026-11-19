@@ -10,12 +10,32 @@ TODO:
 - Add demonstration code under `if __name__ == "__main__":`
 """
 
-def main():
-    # TODO: Write demonstration/testing code
-    # If you want to delete all the code here and work just with a blank file go ahead, remember anything under the if __name__=="__main__":
-    # will only run if this module is being run directly. So used this subprocedure to carry out testing if it is going to be an imported file.
-    pass
+def grade():
+    students = []
+    name = input("enter student name, ( stop to finish )")
+    while name != "stop":
+        age = input("enter student age: ")
+        students.append(name, age)
+        name = input("enter student name, ( stop to finish )")
+    
+    return students
+
+def txt(students):
+    file = open("grades.txt", "w")
+    for i in students:
+        file.write(student[0] + " " + student[1] + "\n")
+    file.close()
+
+def csv(students):
+    file = open("grades.csv", "w")
+    file.write("Name,Age\n")
+    for i in students:
+        file.write(student[0] + "," + student[1] + "\n")
+    file.close()
 
 
-if __name__ == "__main__":
-    main()
+students = grade()
+txt(students)
+csv(students)
+print(txt)
+print(csv)
