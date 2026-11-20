@@ -13,12 +13,32 @@ TODO:
 - Add demonstration code under `if __name__ == "__main__":`
 """
 
-def main():
-    # TODO: Write demonstration/testing code
-    # If you want to delete all the code here and work just with a blank file go ahead, remember anything under the if __name__=="__main__":
-    # will only run if this module is being run directly. So used this subprocedure to carry out testing if it is going to be an imported file.
-    pass
+class Queue:
+    def __init__(self):
+        self.queue = []
 
+    def enqueue(self, x):
+        self.queue.append(x)
 
-if __name__ == "__main__":
-    main()
+    def dequeue(self):
+        
+    
+    def peek(self):
+        
+
+    def size(self):
+        return len(self.queue)
+
+    def is_empty(self):
+        return len(self.queue) == 0
+
+bus = Queue()
+bus.enqueue("261")
+bus.enqueue("320")
+bus.enqueue("61")
+
+print("Buses waiting:", bus.queue)
+bus_stop.dequeue()
+print("Number of buses:", bus.size())
+print("empty?", bus.is_empty())
+
